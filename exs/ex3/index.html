@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Components</title>
+        <style>
+            body {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+       <style>
+           #counter{
+               background-color:lavenderblush;
+               display: flex;
+           }
+
+           #counter > button {
+               width: 35px;
+               height: 35px;
+               font-size: 20px;
+               background-color:lightsteelblue;
+               border: none;
+               border-radius: 5px;
+               margin: 5px;
+           }
+
+           #counter > div{
+               display:flex;
+               flex:1;
+               justify-content: center;
+               align-items: center;
+               margin: 5px;
+               font-size: 20px;
+           }
+
+           #bar{
+               width: 0px;
+               height: 15px;
+               background-color: mediumpurple;
+           }
+       </style>
+        <div id='counter'>
+            <button onclick="dec()">-</button>
+            <div>1</div>
+            <button onclick="inc()">+</button>
+        </div>
+        <div id='bar'></div>
+        <script>
+            var num = 1;
+            function inc(){
+                // console.log("change ui #1");
+                // debugger;
+                // console.log("change button ui #1");
+                // debugger;
+                // //blah.ded;
+                // debugger
+                num = num + 1;
+                document.querySelector("#counter > div").innerText = num;
+                document.querySelector("#bar").style.width = (num*10)+"px";
+            }
+
+            function dec(){
+                num = num -1;
+                document.querySelector("#counter > div").innerText = num;
+                document.querySelector("#bar").style.width = (num*10)+"px";
+
+            }
+
+        </script>
+
+    </body>
+</html>
